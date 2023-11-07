@@ -37,4 +37,4 @@ Code provided to:
 # loop codes for multiple groups in your dataset
 Based on basic ML pipeline, the steps from preprocess to feature selection consum lots of time to finish. We wrote a short bash script can run all the groups in your dataset once you arrange folders and files correctly (preprocess.sh).
 
-We also wrote short bash scripts to run traning in all groups of ML data.frames. Please notice that Random Forest consum lots of time to finish compared to other algorithms. We suggest you to seperatily runing each one folder(group) in RF algorithm.
+We also wrote short bash scripts to run traning in all groups of ML data.frames. Please notice that Random Forest consum lots of time to finish compared to other algorithms (SVM.sh, RF.sh, LogReg.sh). We suggest you to seperatily runing each one folder(group) in RF algorithm.
