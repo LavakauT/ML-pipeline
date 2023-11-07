@@ -23,12 +23,18 @@ $ conda install scikit-learn
 
 ```
 
-Basic ML Pipeline
+# Basic ML Pipeline
 
 Code provided to:
 
-Clean your data (ML_preprocess.py)
-Define a testing set (test_set.py)
-Select the best subset of features to use as predictors (Feature_Selection.py)
-Train and apply a classification (ML_classification.py) or regression (ML_regression.py) machine learning model
-Assess the results of your model (output from the ML_classification/ML_regression scripts with additional options in scripts_PostAnalysis
+1. Clean your data (ML_preprocess.py)
+2. Define a testing set (test_set.py)
+3. Select the best subset of features to use as predictors (Feature_Selection.py)
+4. Train and apply a classification (ML_classification.py) or regression (ML_regression.py) machine learning model
+5. Assess the results of your model (output from the ML_classification/ML_regression scripts with additional options in scripts_PostAnalysis)
+
+
+# loop codes for multiple groups in your dataset
+Based on basic ML pipeline, the steps from preprocess to feature selection consum lots of time to finish. We wrote a short bash script can run all the groups in your dataset once you arrange folders and files correctly (preprocess.sh).
+
+We also wrote short bash scripts to run traning in all groups of ML data.frames. Please notice that Random Forest consum lots of time to finish compared to other algorithms. We suggest you to seperatily runing each one folder(group) in RF algorithm.
