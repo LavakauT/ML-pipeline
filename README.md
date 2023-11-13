@@ -41,5 +41,17 @@ We also wrote short bash scripts to run traning in all groups of ML data.frames.
 
 
 # Post ML
+## Extract Machine learning results
+Please follow [summary_ml_results.R](https://github.com/LavakauT/ML-pipeline/blob/main/summary_ml_results.R) to extract F1/AUC_ROC results in each groups and algorithms. Then, you can chose a best algorithm to extract the K-mers.
 
-Please follow [summary_ml_results.R](https://github.com/LavakauT/ML-pipeline/blob/main/summary_ml_results.R) to extract F1/AUC_ROC results in each groups and algorithms.
+## PCC filter K-mers in 10 times training results
+> suggested Folder arrangement
+> Group
+> -algorithm
+> --imp files
+First, please follow [get_kmer-imp_overlap.py](https://github.com/LavakauT/ML-pipeline/blob/main/get_kmer-imp_overlap.py)  to extract important K-mers among 10 times training in different algorithms.
+Input: all imp files; Output: imp.txt (summary file including K-mers, imp value, and counts)
+
+
+Then apply [ml_pcc_filte.R](https://github.com/LavakauT/ML-pipeline/blob/main/ml_pcc_filter.R) to pull out distinct and important K-mers in selected algorithm.
+Input: imp.txt; Output: imp_distinct_pcc_enriched_kmer.txt
