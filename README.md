@@ -38,3 +38,8 @@ Code provided to:
 Based on basic ML pipeline, the steps from preprocess to feature selection consum lots of time to finish. We wrote a short bash script can run all the groups in your dataset once you arrange folders and files correctly ([preprocess.sh](https://github.com/LavakauT/ML-pipeline/blob/main/preprocess.sh)).
 
 We also wrote short bash scripts to run traning in all groups of ML data.frames. Please notice that Random Forest consum lots of time to finish compared to other algorithms ([SVM.sh](https://github.com/LavakauT/ML-pipeline/blob/main/SVM.sh), [RF.sh](https://github.com/LavakauT/ML-pipeline/blob/main/RF.sh), [LogReg.sh](https://github.com/LavakauT/ML-pipeline/blob/main/LogReg.sh)). We suggest you to seperatily runing each one folder(group) in RF algorithm.
+
+
+# Post ML
+
+Please follow [summary_ml_results.R](https://github.com/LavakauT/ML-pipeline/blob/main/summary_ml_results.R) to extract F1/AUC_ROC results in each groups and algorithms.
