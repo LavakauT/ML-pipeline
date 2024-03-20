@@ -1,6 +1,8 @@
-# loop code for extracting ML resutls--------
+#### loop code for extracting ML resutls ####
+#### load packages ####
 library(dplyr)
 library(pgirmess)
+
 dir <- '/path/to/all/training/files'
 sub.dirs <- list.dirs(dir,
                       full.names = FALSE,
@@ -34,16 +36,21 @@ for (z in 1:length(sub.dirs)) {
         df <- cbind(df,sub.df)}
       
       # output result
-      write.delim(df, paste0(dir, '/', sub.dir, '/', paste(sub.dir, algorithm, sep = '_'), '_sum.txt'))   
+      write.table(df, paste0(dir, '/', sub.dir, '/', paste(sub.dir, algorithm, sep = '_'), '_sum.txt'),
+                 row.names = F,
+                 quote = F,
+                 sep = '\t')   
     }
   }
 }
 
 
-# code for summarize results--------
+##### code for summarize results ####
+#### load packages ####
 library(tidyverse)
 library(pgirmess)
 library(ggplot2)
+
 dir <- '/path/to/all/training/files'
 sub.dirs <- list.dirs(dir,
                       full.names = FALSE,
@@ -113,8 +120,8 @@ p <- ggplot(data = df.com,
         legend.position = 'bottom',
         legend.box = 'horizontal')
 
-tiff(paste0(dir, '/', 'AUC_ROC.tif'),
-     width = 1500, height = 1500, res = 300)
+pdf(paste0(dir, '/', 'AUC_ROC.pdf'),
+     width = 7, height = 7)
 p
 dev.off()
 
@@ -140,7 +147,7 @@ p <- ggplot(data = df.com,
         legend.position = 'bottom',
         legend.box = 'horizontal')
 
-tiff(paste0(dir, '/', 'F1.tif'),
-     width = 1500, height = 1500, res = 300)
+pdf(paste0(dir, '/', 'F1.pdf'),
+     width = 7, height = 7)
 p
 dev.off()
