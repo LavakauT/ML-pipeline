@@ -1,6 +1,0 @@
-dir <- '/full/path/to/all/pCRE/group/folder'folder <- list.dirs(dir,                    full.names = FALSE,                    recursive = FALSE)
-
-getwd()
-dir <- '/full/path/to/ML_master'
-setwd(dir)
-for (i in 1:length(folder)) {  dir.create(folder[i])}
