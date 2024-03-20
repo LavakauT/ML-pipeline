@@ -34,12 +34,6 @@ Code provided to:
 5. Assess the results of your model (output from the ML_classification/ML_regression scripts with additional options in scripts_PostAnalysis)
 
 
-# loop codes for multiple groups in your dataset
-We have developed a short bash script to run all the groups in your dataset once the folders and files are arranged correctly. This script automates the steps from preprocessing to feature selection, which typically consume a significant amount of time to complete in a basic Machine Learning pipeline ([preprocess.sh](https://github.com/LavakauT/ML-pipeline/blob/main/preprocess.sh)).
-
-We have also developed short bash scripts to run training in all groups of Machine Learning data frames. It's important to note that training Random Forest models may take significantly longer to finish than other algorithms.([SVM.sh](https://github.com/LavakauT/ML-pipeline/blob/main/SVM.sh), [RF.sh](https://github.com/LavakauT/ML-pipeline/blob/main/RF.sh), [LogReg.sh](https://github.com/LavakauT/ML-pipeline/blob/main/LogReg.sh)). 
-
-
 # Post ML
 ## Extract Machine learning results
 Please follow [summary_ml_results.R](https://github.com/LavakauT/ML-pipeline/blob/main/summary_ml_results.R) to extract F1/AUC_ROC results in each groups and algorithms. Then, you can chose a best algorithm to extract the K-mers.
